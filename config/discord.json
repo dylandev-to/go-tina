@@ -1,0 +1,15 @@
+{
+    "prefix": "go!",
+    "messages": {
+        "command_not_found": "Command not found."
+    },
+    "commands": {
+        "ping": {
+            "names": ["ping", "pg", "latency", "lag"],
+            "description": "pings xd"
+        }
+    },
+    "command_messages": {
+        "ping": "Pong from json"
+    }
+}
