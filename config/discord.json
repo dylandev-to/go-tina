@@ -6,11 +6,23 @@
     },
     "commands": {
         "ping": {
-            "names": ["ping", "pg", "latency", "lag"],
+            "names": [
+                "ping",
+                "pg",
+                "latency",
+                "lag"
+            ],
             "description": "pings xd"
         },
         "kiss": {
-            "names": ["kiss"],
+            "names": [
+                "kiss",
+                "smooch",
+                "peck",
+                "osculate",
+                "buss",
+                "kith"
+            ],
             "description": "kisses someone"
         }
     },

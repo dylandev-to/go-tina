@@ -30,7 +30,7 @@ func Kiss(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	s.ChannelMessageSendEmbedReply(m.ChannelID,
 		&discordgo.MessageEmbed{
-			Description: fmt.Sprintf(constants.GetDiscordConstants().Config.CmdMessages["kiss"], m.Member.Nick, user.Nick),
+			Description: fmt.Sprintf(constants.GetDiscordConstants().Config.CmdMessages["kiss"], m.Member.DisplayName(), user.DisplayName()),
 			Image: &discordgo.MessageEmbedImage{
 				URL: react,
 			},
