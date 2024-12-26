@@ -22,7 +22,7 @@ func Kiss(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	user, err := s.GuildMember(m.GuildID, mentions[0])
+	mentionMember, err := s.GuildMember(m.GuildID, mentions[0])
 	if err != nil {
 		s.ChannelMessageSendReply(m.ChannelID, constants.GetDiscordConstants().Config.Messages["mention_required"], m.Reference())
 		return
@@ -30,7 +30,7 @@ func Kiss(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	s.ChannelMessageSendEmbedReply(m.ChannelID,
 		&discordgo.MessageEmbed{
-			Description: fmt.Sprintf(constants.GetDiscordConstants().Config.CmdMessages["kiss"], m.Member.DisplayName(), user.DisplayName()),
+			Description: fmt.Sprintf(constants.GetDiscordConstants().Config.CmdMessages["kiss"], utils.GetDisplayName(m.Member.Nick, m.Author.GlobalName), utils.GetDisplayName(mentionMember.Nick, mentionMember.User.GlobalName)),
 			Image: &discordgo.MessageEmbedImage{
 				URL: react,
 			},

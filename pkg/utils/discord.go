@@ -17,3 +17,10 @@ func GetMentions(text string) ([]string, error) {
 	}
 	return nil, fmt.Errorf("mention required")
 }
+
+func GetDisplayName(nick string, username string) string {
+	if nick != "" {
+		return nick
+	}
+	return username
+}
