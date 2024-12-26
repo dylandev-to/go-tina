@@ -7,25 +7,11 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"time"
 
 	"github.com/joho/godotenv"
 )
 
-func nanosecondsToMilliseconds(nanoseconds int64) float64 {
-	return float64(nanoseconds) / 1000000
-}
-
 func main() {
-	start := time.Now()
-	var count = 0
-	for count < 1000000000000 {
-		count++
-	}
-	elapsed := time.Since(start)
-	fmt.Printf("%d nanoseconds is equal to %.3f milliseconds\n", elapsed.Nanoseconds(), nanosecondsToMilliseconds(elapsed.Nanoseconds()))
-	return
-
 	err := godotenv.Load()
 	if err != nil {
 		fmt.Println("Error loading .env")

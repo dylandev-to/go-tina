@@ -1,15 +1,21 @@
 {
     "prefix": "go!",
     "messages": {
-        "command_not_found": "Command not found."
+        "command_not_found": "Command not found.",
+        "mention_required": "You have to mention someone."
     },
     "commands": {
         "ping": {
             "names": ["ping", "pg", "latency", "lag"],
             "description": "pings xd"
+        },
+        "kiss": {
+            "names": ["kiss"],
+            "description": "kisses someone"
         }
     },
     "command_messages": {
-        "ping": "Pong from json"
+        "ping": "Pong from json",
+        "kiss": "%s has kissed %s"
     }
 }

@@ -2,6 +2,7 @@ package commands
 
 import (
 	"go-tina/internal/constants"
+	"go-tina/pkg/commands/actions"
 	"slices"
 	"strings"
 
@@ -17,6 +18,9 @@ type command struct {
 var commandsRun = map[string]*command{
 	"ping": {
 		run: ping,
+	},
+	"kiss": {
+		run: actions.Kiss,
 	},
 }
 
