@@ -1,5 +1,6 @@
 {
     "prefix": "go!",
+    "interaction_cooldown": 10,
     "messages": {
         "command_not_found": "Command not found.",
         "mention_required": "You have to mention someone."
@@ -28,6 +29,6 @@
     },
     "command_messages": {
         "ping": "Pong from json",
-        "kiss": "%s has kissed %s"
+        "kiss": "**%s** has kissed **%s**"
     }
 }

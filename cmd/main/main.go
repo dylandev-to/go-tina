@@ -4,8 +4,10 @@ import (
 	"fmt"
 	"go-tina/internal/database"
 	"go-tina/internal/discord"
+	"go-tina/pkg/utils"
 	"os"
 	"os/signal"
+	"path"
 	"syscall"
 
 	"github.com/joho/godotenv"
@@ -24,7 +26,7 @@ func main() {
 		return
 	}
 
-	db, err := database.StartDatabase()
+	err = database.StartDatabase(path.Join(utils.GetCwd(), "db", "bot.db"))
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -35,5 +37,4 @@ func main() {
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
 	dg.Close()
-	db.Close()
 }
